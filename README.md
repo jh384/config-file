@@ -30,3 +30,9 @@ define service{
         service_description             Disk Space
         check_command                   check_local_disk!20%!10%!/
 }
+define service{
+        use                             generic-service
+        host_name                       jimmyserver
+        service_description             CPU Space
+        check_command                   check_local_load!5.0,4.0,3.0!10.0,6.0,4.0
+}
